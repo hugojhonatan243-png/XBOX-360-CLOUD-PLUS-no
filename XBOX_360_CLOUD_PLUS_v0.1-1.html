@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>XBOX 360 CLOUD+</title>
+<style>
+:root{--bg:#07111c;--panel:#101e2d;--panel2:#17283a;--line:#263b50;--green:#35d078;--muted:#9bb0c5;--white:#f5f8fc}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#173b54 0,#091522 52%,#050b12 100%);color:var(--white);font:16px "Segoe UI",Arial,sans-serif;min-height:100vh}
+header{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;border-bottom:1px solid #294054;background:#07111cdd;position:sticky;top:0;z-index:3;backdrop-filter:blur(12px)}
+.brand{font-weight:900;letter-spacing:1.2px;font-size:21px}.brand span{color:var(--green)}.status{font-size:11px;color:var(--green);border:1px solid #237d50;border-radius:20px;padding:7px 10px}
+main{max-width:1180px;margin:auto;padding:28px 5vw 50px}.welcome{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:22px}.eyebrow{color:var(--green);font-size:11px;font-weight:800;letter-spacing:2px}.welcome h1{font-size:clamp(27px,5vw,43px);margin:8px 0 4px}.sub{color:var(--muted);font-size:14px}
+.hero{min-height:220px;border:1px solid #31506a;border-radius:18px;overflow:hidden;padding:26px;background:linear-gradient(105deg,#0d2639 0%,#123b50 48%,#162a43 100%);position:relative;display:flex;align-items:center}.hero:after{content:"";position:absolute;width:330px;height:330px;right:4%;top:-55px;border-radius:50%;border:1px solid #65e7ad55;box-shadow:0 0 0 28px #65e7ad0c,0 0 0 58px #65e7ad0a}.hero-copy{position:relative;z-index:1;max-width:530px}.hero h2{font-size:clamp(24px,4vw,36px);margin:8px 0}.hero p{color:#c1d3e1;max-width:430px;line-height:1.5}.btn{display:inline-block;background:var(--green);color:#062014;text-decoration:none;border:0;border-radius:8px;padding:11px 17px;font-weight:800;margin-top:8px;cursor:pointer}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin:28px 0 14px}.section-head h3{margin:0;font-size:19px}.muted{color:var(--muted);font-size:12px}
+.games{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.game{background:var(--panel);border:1px solid var(--line);border-radius:13px;overflow:hidden;transition:.15s;cursor:pointer}.game:focus,.game:hover{outline:2px solid var(--green);transform:translateY(-2px)}.cover{height:125px;display:flex;align-items:end;padding:13px;font-size:18px;font-weight:900;letter-spacing:.3px;background:linear-gradient(135deg,#1b5164,#15253f)}.cover.c2{background:linear-gradient(135deg,#6b3829,#1b263b)}.cover.c3{background:linear-gradient(135deg,#3d386e,#152b3e)}.cover.c4{background:linear-gradient(135deg,#4b5c39,#172b34)}.cover.c5{background:linear-gradient(135deg,#6b3b53,#1a2540)}.cover.c6{background:linear-gradient(135deg,#276b70,#17243e)}.game-info{padding:11px 12px}.game-info b{font-size:14px}.game-info small{display:block;color:var(--muted);margin-top:5px}
+.toolbar{display:flex;gap:10px;align-items:center;margin-top:20px}.search{flex:1;min-width:0;background:#0d1b29;border:1px solid var(--line);border-radius:8px;padding:12px;color:white;font-size:14px}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{background:#132437;color:#c6d5e2;border:1px solid var(--line);padding:9px 13px;border-radius:8px;cursor:pointer}.tab.active{border-color:var(--green);color:var(--green)}
+footer{border-top:1px solid var(--line);padding:18px 5vw;color:#7890a7;text-align:center;font-size:11px}
+.notice{margin-top:22px;padding:13px 15px;border:1px solid #6b5730;background:#2b2518;color:#e6d7ad;border-radius:9px;font-size:12px;line-height:1.5}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#173b2b;border:1px solid #35d078;color:#eafff2;padding:12px 18px;border-radius:10px;display:none;z-index:5;max-width:90%;text-align:center}
+@media(max-width:760px){.games{grid-template-columns:repeat(2,minmax(0,1fr))}.welcome{align-items:start;flex-direction:column}.hero{min-height:205px}.cover{height:105px}}
+@media(max-width:380px){header{padding:0 16px}.brand{font-size:17px}.status{font-size:9px}.games{gap:9px}.cover{font-size:15px}}
+</style>
+</head>
+<body>
+<header><div class="brand">XBOX 360 <span>CLOUD+</span></div><div class="status">● CONCEITO v0.1</div></header>
+<main>
+ <div class="welcome"><div><div class="eyebrow">CLOUD GAMING HUB</div><h1>Seus jogos. Na nuvem.</h1><div class="sub">Uma nova experiência para o seu Xbox 360.</div></div><div class="muted">PERFIL: CONVIDADO</div></div>
+ <section class="hero"><div class="hero-copy"><div class="eyebrow">BEM-VINDO AO CLOUD+</div><h2>Jogue além das gerações.</h2><p>Explore sua biblioteca de jogos na nuvem em uma interface criada para o XBOX 360 CLOUD+.</p><button class="btn" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">EXPLORAR JOGOS　→</button></div></section>
+ <div class="toolbar"><input id="search" class="search" placeholder="Pesquisar jogos..." oninput="filterGames()"></div>
+ <div class="section-head" id="catalogo"><h3>Biblioteca em destaque</h3><span class="muted">CATÁLOGO DEMONSTRATIVO</span></div>
+ <div class="tabs"><button class="tab active" onclick="setTab(this,'Todos')">Todos</button><button class="tab" onclick="setTab(this,'Corrida')">Corrida</button><button class="tab" onclick="setTab(this,'Ação')">Ação</button><button class="tab" onclick="setTab(this,'Aventura')">Aventura</button></div>
+ <div class="games" id="games">
+  <div class="game" tabindex="0" data-name="Forza Horizon 5" data-cat="Corrida" onclick="selectGame('Forza Horizon 5')"><div class="cover">FORZA<br>HORIZON 5</div><div class="game-info"><b>Forza Horizon 5</b><small>Corrida · Nuvem</small></div></div>
+  <div class="game" tabindex="0" data-name="Halo Infinite" data-cat="Ação" onclick="selectGame('Halo Infinite')"><div class="cover c2">HALO<br>INFINITE</div><div class="game-info"><b>Halo Infinite</b><small>Ação · Nuvem</small></div></div>
+  <div class="game" tabindex="0" data-name="Gears 5" data-cat="Ação" onclick="selectGame('Gears 5')"><div class="cover c3">GEARS 5</div><div class="game-info"><b>Gears 5</b><small>Ação · Nuvem</small></div></div>
+  <div class="game" tabindex="0" data-name="Microsoft Flight Simulator" data-cat="Aventura" onclick="selectGame('Microsoft Flight Simulator')"><div class="cover c4">FLIGHT<br>SIMULATOR</div><div class="game-info"><b>Flight Simulator</b><small>Simulação · Nuvem</small></div></div>
+  <div class="game" tabindex="0" data-name="Sea of Thieves" data-cat="Aventura" onclick="selectGame('Sea of Thieves')"><div class="cover c5">SEA OF<br>THIEVES</div><div class="game-info"><b>Sea of Thieves</b><small>Aventura · Nuvem</small></div></div>
+  <div class="game" tabindex="0" data-name="Minecraft" data-cat="Aventura" onclick="selectGame('Minecraft')"><div class="cover c6">MINECRAFT</div><div class="game-info"><b>Minecraft</b><small>Aventura · Nuvem</small></div></div>
+ </div>
+ <div class="notice"><b>Prévia de interface — não é streaming real.</b><br>Os jogos e capas são exemplos ilustrativos. Esta versão ainda não faz login Microsoft, não consulta o catálogo real do Game Pass e não inicia sessões xCloud. A conexão real exige integração técnica compatível e autorização dos serviços Microsoft.</div>
+</main>
+<footer>XBOX 360 CLOUD+ · PROJETO INDEPENDENTE · NÃO AFILIADO À MICROSOFT</footer>
+<div id="toast"></div>
+<script>
+let category='Todos';
+function toast(msg){let t=document.getElementById('toast');t.textContent=msg;t.style.display='block';clearTimeout(window.tt);window.tt=setTimeout(()=>t.style.display='none',2600)}
+function selectGame(name){toast(name+' — integração xCloud ainda não implementada nesta prévia.')}
+function filterGames(){let q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.game').forEach(g=>{let ok=g.dataset.name.toLowerCase().includes(q)&&(category==='Todos'||g.dataset.cat===category);g.style.display=ok?'':'none'})}
+function setTab(el,cat){category=cat;document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));el.classList.add('active');filterGames()}
+document.querySelectorAll('.game').forEach(g=>g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectGame(g.dataset.name)}}));
+</script>
+</body></html>
